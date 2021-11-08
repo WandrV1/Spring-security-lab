@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Medication</title>
+</head>
+<body>
+<label for="id">Id: </label>
+<p th:text="${medication.getId()}" id="id">Id</p>
+<label for="name">Name: </label>
+<p th:text="${medication.getName()}" id="name">Name</p>
+<label for="substance">Active substance: </label>
+<p th:text="${medication.getSubstance()}" id="substance">Substance</p>
+<label for="country">Country: </label>
+<p th:text="${medication.getCountry()}" id="country">Country</p>
+<label for="price">Price: </label>
+<p th:text="${medication.getPrice()}" id="price">Price</p>
+<label for="rating">Rating: </label>
+<p th:text="${medication.getRating()}" id="rating">Rating</p>
+
+<a th:href="@{/medications}">Medications list</a>
+<br/>
+<a th:href="@{/medications/{id}/edit(id=${medication.getId()})}">Edit</a>
+<br/>
+<form th:method="DELETE" th:action="@{/medications/{id}(id=${medication.getId()})}">
+    <input type="submit" value="Delete"/>
+</form>
+</body>
+</html>

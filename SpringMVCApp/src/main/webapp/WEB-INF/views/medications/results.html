@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Search results</title>
+</head>
+<body>
+<a th:href="@{/medications}">Medications list</a>
+<br/>
+<hr>
+<div th:each="medication : ${medications}">
+    <a th:href="@{/medications/{id}(id=${medication.getId()})}" th:text="${medication.getName() + ', ' + medication.getPrice()}">name</a>
+</div>
+
+</body>
+</html>

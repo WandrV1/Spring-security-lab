@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Search parameters</title>
+</head>
+<body>
+<a th:href="@{/medications}">Medications list</a>
+<br/>
+<form th:method="POST" th:action="@{/medications/results}">
+    <label for="param">Enter search param: </label>
+    <input type="text" id="param" name="param">
+    <br/>
+    <label for="type">Select search type:</label>
+    <select id="type" name="type">
+        <option value="name">Search by name</option>
+        <option value="substance">Search by substance</option>
+        <option value="country">Search by country</option>
+        <option value="priceLess">Search with lower price</option>
+        <option value="priceBigger">Search with bigger price</option>
+        <option value="priceEqual">Search with equal price</option>
+        <option value="ratingBigger">Search with bigger rating</option>
+        <option value="ratingLess">Search with lower rating</option>
+        <option value="ratingEqual">Search with equal rating</option>
+    </select>
+    <br/>
+    <input type="submit" value="Search">
+</form>
+
+</body>
+</html>

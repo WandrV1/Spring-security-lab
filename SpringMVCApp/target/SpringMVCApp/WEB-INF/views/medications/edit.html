@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update medication</title>
+</head>
+<body>
+
+<form th:method="PATCH" th:action="@{/medications/{id}(id=${medication.getId()})}" th:object="${medication}">
+    <label for="name">Enter name: </label>
+    <input type="text" th:field="*{name}" id="name">
+    <div style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
+    <br/>
+    <label for="substance">Enter substance: </label>
+    <input type="text" th:field="*{substance}" id="substance">
+    <div style="color: red" th:if="${#fields.hasErrors('substance')}" th:errors="*{substance}">Substance error</div>
+    <br/>
+    <label for="country">Enter country: </label>
+    <input type="text" th:field="*{country}" id="country">
+    <div style="color: red" th:if="${#fields.hasErrors('country')}" th:errors="*{country}">Country error</div>
+    <br/>
+    <label for="price">Enter price: </label>
+    <input type="text" th:field="*{price}" id="price">
+    <div style="color: red" th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Price error</div>
+    <br/>
+    <label for="rating">Enter rating: </label>
+    <input type="text" th:field="*{rating}" id="rating">
+    <div style="color: red" th:if="${#fields.hasErrors('rating')}" th:errors="*{rating}">Rating error</div>
+    <br/>
+    <input type="submit" value="Update">
+</form>
+
+</body>
+</html>
